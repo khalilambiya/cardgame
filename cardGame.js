@@ -16,22 +16,25 @@ for (let i = 0; i < gameSets; i++) {
     let score = [0,0];
 
     // players start with empty hand
-    let cardForPlayer1 = []
-    let cardForPlayer2 = []
+    let player1Deck = []
+    let player2Deck = []
 
     //take one random card from deck and hand it to players
     while (card.length) {
-        cardForPlayer1.push(card.splice(card.length * Math.random() | 0, 1)[0]);
-        cardForPlayer2.push(card.splice(card.length * Math.random() | 0, 1)[0]);
+        player1Deck.push(card.splice(card.length * Math.random() | 0, 1)[0]);
+        player2Deck.push(card.splice(card.length * Math.random() | 0, 1)[0]);
     }
 
-    console.log("cardForPlayer1 " + cardForPlayer1)
-    console.log("cardForPlayer2 " + cardForPlayer2)
+    // this version will sort first if `top most card` in the task means
+    // to compare the biggest card first from the dec
+    player1Deck.sort((a, b) => b - a);
+    player2Deck.sort((a, b) => b - a);
+    console.log("player1Deck " + player1Deck)
+    console.log("player2Deck " + player2Deck)
 
-    while (cardForPlayer1.length) {
-        let cardPlayer1 = cardForPlayer1.splice(card.length * Math.random() | 0, 1)[0];
-        let cardPlayer2 = cardForPlayer2.splice(card.length * Math.random() | 0, 1)[0];
-
+    while (player1Deck.length) {
+        let cardPlayer1 = player1Deck.splice(card.length * Math.random() | 0, 1)[0];
+        let cardPlayer2 = player2Deck.splice(card.length * Math.random() | 0, 1)[0];
         console.log("comparing cards :"+ cardPlayer1 + " and " + cardPlayer2)
         if (cardPlayer1 > cardPlayer2) {
             score[0]++
