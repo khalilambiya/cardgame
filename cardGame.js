@@ -36,8 +36,7 @@ for (let i = 0; i < gameSets; i++) {
         if (cardPlayer1 > cardPlayer2) {
             score[0]++
             console.log(" player 1 wins")
-        }
-        else {
+        } else {
             console.log(" player 2 wins")
             score[1]++
         }
@@ -46,10 +45,10 @@ for (let i = 0; i < gameSets; i++) {
     if (score[0]>score[1]) {
         overallScorePlayer1++
         console.log(" player 1 win the game: " + (i+1))
-    }
-    else
+    } else {
         overallScorePlayer2++
         console.log(" player 2 win the game: " + (i+1))
+    }
 }
 
 console.log("overallScorePlayer1 "+ overallScorePlayer1)
