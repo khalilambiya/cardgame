@@ -1,5 +1,6 @@
 # Card Game
 
+this variation of the game will compare the highest card on the deck from both hands
 to run the game, simply run \
 ```node cardGame.js```
 
