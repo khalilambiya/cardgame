@@ -25,16 +25,12 @@ for (let i = 0; i < gameSets; i++) {
         player2Deck.push(card.splice(card.length * Math.random() | 0, 1)[0]);
     }
 
-    // this version will sort first if `top most card` in the task means
-    // to compare the biggest card first from the dec
-    player1Deck.sort((a, b) => b - a);
-    player2Deck.sort((a, b) => b - a);
     console.log("player1Deck " + player1Deck)
     console.log("player2Deck " + player2Deck)
 
     while (player1Deck.length) {
-        let cardPlayer1 = player1Deck.splice(card.length * Math.random() | 0, 1)[0];
-        let cardPlayer2 = player2Deck.splice(card.length * Math.random() | 0, 1)[0];
+        let cardPlayer1 = player1Deck.splice(0, 1);
+        let cardPlayer2 = player2Deck.splice(0, 1);
         console.log("comparing cards :"+ cardPlayer1 + " and " + cardPlayer2)
         if (cardPlayer1 > cardPlayer2) {
             score[0]++
